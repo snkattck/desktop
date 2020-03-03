@@ -3,29 +3,23 @@
 
     <!-- The root menu. -->
     <RootMenu onroot="12" label="START">
-        <Program icon="terminal.png" label="Terminal">xfce4-terminal</Program>
+        <Program icon="terminal.png" label="Terminal">tilix</Program>
     </RootMenu>
 
     <!-- Tray at the bottom. -->
-    <Tray x="0" y="0" autohide="off" height="30">
-
-        <TrayButton label="START">root:1</TrayButton>
+    <Tray x="0" y="0" autohide="off" height="35">
         <Spacer width="2"/>
-        <TrayButton label="SHOW DESKTOP">showdesktop</TrayButton>
+        <TrayButton label="applications">root:1</TrayButton>
         <Spacer width="2"/>
-
         <Pager labeled="true"/>
-
         <TaskList maxwidth="256"/>
-
         <Dock/>
-        <Clock format="%H:%M"><Button mask="123">exec:xclock</Button></Clock>
-
+        <Clock format="%H:%M"></Clock>
     </Tray>
 
     <!-- Visual Styles -->
     <WindowStyle>
-        <Font antialias="true">Sans-9:bold</Font>
+        <Font antialias="true">Fira Mono Regular-12</Font>
         <Width>4</Width>
         <Height>21</Height>
         <Corner>3</Corner>
@@ -41,14 +35,14 @@
         </Active>
     </WindowStyle>
     <TrayStyle group="true" list="all">
-        <Font antialias="true">Sans-9</Font>
+        <Font antialias="true">Fira Mono Regular-12</Font>
         <Background>#013593</Background>
         <Foreground>#FFFFFF</Foreground>
         <Outline>#000000</Outline>
         <Opacity>0.75</Opacity>
     </TrayStyle>
     <TaskListStyle>
-      <Font antialias="true">Sans-9</Font>
+      <Font antialias="true">Fira Mono Regular-12</Font>
       <Active>
         <Foreground>#013593</Foreground>
         <Background>#F5DB34</Background>
@@ -67,7 +61,7 @@
         </Active>
     </PagerStyle>
     <MenuStyle>
-        <Font antialias="true">Sans-9</Font>
+        <Font antialias="true">Fira Mono Regular-12</Font>
         <Foreground>#FFFFFF</Foreground>
         <Background>#333333</Background>
         <Outline>#000000</Outline>
@@ -78,7 +72,7 @@
         <Opacity>0.85</Opacity>
     </MenuStyle>
     <PopupStyle>
-        <Font antialias="true">Sans-9</Font>
+        <Font antialias="true">Fira Mono Regular-12</Font>
         <Foreground>#000000</Foreground>
         <Background>#999999</Background>
     </PopupStyle>
@@ -146,4 +140,3 @@
     <Key mask="A" key="Down">ddesktop</Key>
 
 </JWM>
-

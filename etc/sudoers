@@ -1,1 +1,1 @@
-app ALL = NOPASSWD : /usr/bin/yum, /usr/bin/dnf
+app ALL = NOPASSWD : /usr/bin/pacman
