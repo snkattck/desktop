@@ -2,8 +2,10 @@ FROM snkattck/desktop:latest
 RUN sudo pacman --noconfirm -Syy && \
     sudo pacman --noconfirm -Su && \
     sudo pacman --noconfirm -S \
-	    qgis \
-	    postgresql \
-        postgis && \
-        python-owslib && \
+        julia \
+        openblas \
+        r \
+        tensorflow \
+        python-matplotlib \
+        python-scikit-learn && \
     sudo pacman --noconfirm -Scc

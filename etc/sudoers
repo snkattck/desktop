@@ -1,1 +1,1 @@
-app ALL = NOPASSWD : /usr/bin/pacman
+app ALL = NOPASSWD : /usr/bin/pacman, /usr/sbin/makepkg

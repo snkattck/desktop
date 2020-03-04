@@ -7,12 +7,19 @@ RUN useradd -U -m app && \
     pacman --noconfirm -Syy && \
     pacman --noconfirm -Su && \
     echo "--> Installing desktop" && \
-    pacman --noconfirm -S jwm pcmanfm ttf-fira-mono ttf-fira-code gnu-free-fonts tilix sakura sudo && \
-    dbus-uuidgen > /etc/machine-id
+    pacman --noconfirm -S jwm pcmanfm ttf-fira-mono ttf-fira-code gnu-free-fonts tilix sudo git fakeroot base-devel && \
+    dbus-uuidgen > /etc/machine-id 
 COPY ./static/wallpaper.png /opt/resources/wallpaper.png
 COPY ./etc/sudoers /etc/sudoers
 ENV DISPLAY localhost:0
 USER app
+WORKDIR /home/app
+RUN echo "--> Building trizen" && \
+    git clone https://aur.archlinux.org/trizen.git && \
+    cd trizen && \
+    makepkg --noconfirm -sri && \
+    rm -rf trizen && \
+    sudo pacman --noconfirm -Scc
 COPY --chown=app:app ./dotjwmrc /home/app/.jwmrc
 COPY --chown=app:app ./dotconfig /home/app/.config
 WORKDIR /home/app
